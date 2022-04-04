@@ -20,7 +20,7 @@ public class Main {
                 int food = Integer.parseInt(data[1]);
                 String area = data[2];
                 animals.putIfAbsent(name, new Animal(name, 0, area));
-                animals.get(name).increaceDailyFood(food);
+                animals.get(name).increaseDailyFood(food);
                 areas.putIfAbsent(area, new Area(area));
                 areas.get(area).getAnimals().add(animals.get(name));
             } else if (command.equals("Feed")) {
@@ -29,7 +29,7 @@ public class Main {
                 int food = Integer.parseInt(data[1]);
                 if (animals.containsKey(name)) {
                     Animal animal = animals.get(name);
-                    if (animal.feed(food)) {
+                    if (animal.isFed(food)) {
                         areas.get(animal.getArea()).getAnimals().remove(animal);
                         animals.remove(name);
                         System.out.println(name + " was successfully fed");

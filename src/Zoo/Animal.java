@@ -11,7 +11,7 @@ public class Animal {
         Area = area;
     }
 
-    public boolean feed(int food) {
+    public boolean isFed(int food) {
         foodNeeded -= food;
         if (foodNeeded <= 0) {
             return true;
@@ -19,7 +19,7 @@ public class Animal {
         return false;
     }
 
-    public void increaceDailyFood(int value) {
+    public void increaseDailyFood(int value) {
         foodNeeded += value;
     }
 
