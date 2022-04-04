@@ -46,6 +46,10 @@ public class LinkeTList<T> {
 
     public void deleteLast() {
         assureNotEmpty();
+        if (first == last) {
+            first = last = null;
+            return;
+        }
         Node<T> current = first;
         for (int i = 0; i < size; i++) {
             if (current.getNext() == last) {
