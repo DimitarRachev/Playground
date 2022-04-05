@@ -27,6 +27,10 @@ public class Animal {
         return Area;
     }
 
+    public int getFoodNeeded() { return foodNeeded;  }
+
+    public String getName() { return name;  }
+
     @Override
     public String toString() {
         return name + " -> " + foodNeeded + "g";
