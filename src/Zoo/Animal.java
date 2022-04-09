@@ -13,10 +13,7 @@ public class Animal {
 
     public boolean isFed(int food) {
         foodNeeded -= food;
-        if (foodNeeded <= 0) {
-            return true;
-        }
-        return false;
+       return  foodNeeded <= 0;
     }
 
     public void increaseDailyFood(int value) {
