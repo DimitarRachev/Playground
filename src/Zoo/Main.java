@@ -1,7 +1,5 @@
 package Zoo;
 
-import java.awt.event.WindowFocusListener;
-import java.util.Comparator;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -53,11 +51,11 @@ public class Main {
 //        }).forEach(System.out::println);
 
         System.out.println("Areas with hungry animals:");
+        //unsorted print
+        areas.values().stream().filter(v -> v.toString() != null).forEach(System.out::println);
         //Sorted print
 //        areas.values().stream().filter(v -> v.toString() != null)
 //        .sorted((e1, e2) -> Integer.compare(e2.getAnimals().size(), e1.getAnimals().size()))
 //        .forEach(System.out::println);
-        //unsorted print
-        areas.values().stream().filter(v -> v.toString() != null).forEach(System.out::println);
     }
 }
