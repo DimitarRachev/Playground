@@ -42,20 +42,20 @@ public class Main {
 
         System.out.println("Animals:");
         //unsorted print
-//        animals.values().forEach(System.out::println);
+        animals.values().forEach(System.out::println);
         //Sorted print
-        animals.values().stream().sorted((e1, e2) -> {
-            if (e1.getFoodNeeded() != e2.getFoodNeeded()) {
-                return Integer.compare(e2.getFoodNeeded(), e1.getFoodNeeded());
-            } else {
-                return e1.getName().compareTo(e2.getName());
-            }
-        }).forEach(System.out::println);
+//        animals.values().stream().sorted((e1, e2) -> {
+//            if (e1.getFoodNeeded() != e2.getFoodNeeded()) {
+//                return Integer.compare(e2.getFoodNeeded(), e1.getFoodNeeded());
+//            } else {
+//                return e1.getName().compareTo(e2.getName());
+//            }
+//        }).forEach(System.out::println);
 
         System.out.println("Areas with hungry animals:");
         //Sorted print
-        areas.values().stream().filter(v -> v.toString() != null).sorted((e1, e2) -> Integer.compare(e2.getAnimals().size(), e1.getAnimals().size())).forEach(System.out::println);
+//        areas.values().stream().filter(v -> v.toString() != null).sorted((e1, e2) -> Integer.compare(e2.getAnimals().size(), e1.getAnimals().size())).forEach(System.out::println);
         //unsorted print
-//        areas.values().stream().filter(v -> v.toString() != null).forEach(System.out::println);
+        areas.values().stream().filter(v -> v.toString() != null).forEach(System.out::println);
     }
 }
