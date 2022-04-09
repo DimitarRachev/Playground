@@ -54,7 +54,9 @@ public class Main {
 
         System.out.println("Areas with hungry animals:");
         //Sorted print
-//        areas.values().stream().filter(v -> v.toString() != null).sorted((e1, e2) -> Integer.compare(e2.getAnimals().size(), e1.getAnimals().size())).forEach(System.out::println);
+//        areas.values().stream().filter(v -> v.toString() != null)
+//        .sorted((e1, e2) -> Integer.compare(e2.getAnimals().size(), e1.getAnimals().size()))
+//        .forEach(System.out::println);
         //unsorted print
         areas.values().stream().filter(v -> v.toString() != null).forEach(System.out::println);
     }
