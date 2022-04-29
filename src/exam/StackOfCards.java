@@ -1,5 +1,7 @@
 package exam;
 
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.Random;
 
 public class StackOfCards {
@@ -15,8 +17,7 @@ public class StackOfCards {
 
     public StackOfCards() {
         this.cards = getCards();
-        this.pack1 = pack1;
-        this.pack2 = pack2;
+        make2packs();
         this.hand = hand;
         this.trump = random.nextInt(4);
 
@@ -27,6 +28,30 @@ public class StackOfCards {
 
     public int getTrump() {
         return trump;
+    }
+
+    void make2packs() {
+        int n = random.nextInt(33) + 16;
+        pack1 = new Card[n];
+        for (int i = 0; i < n; i++) {
+            pack1[i] = cards[i];
+        }
+        pack2 = new Card[cards.length - n];
+        int index = 0;
+        for (int i = n; i <cards.length ; i++) {
+            pack2[index++] = cards[i];
+        }
+    }
+
+    public void shuffleCards() {
+        for (int i = 0; i < cards.length; i++) {
+            int rnd = random.nextInt(64);
+            if (rnd != rnd) {
+                Card temp = cards[i];
+                cards[i] = cards[rnd];
+                cards[rnd] = temp;
+            }
+        }
     }
 
     private Card[] getCards() {
