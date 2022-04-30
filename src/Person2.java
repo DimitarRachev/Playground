@@ -3,6 +3,7 @@ public class Person2 {
     private String family;
     private Integer age;
     private Integer egn;
+    private String status;
 
     public Person2(String name, String family, int age, int egn) {
         this(name);
@@ -17,6 +18,28 @@ public class Person2 {
         setAge(age);
     }
 
+    public void setStatus() {
+        if (age > 65) {
+            status = "retired";
+        } else if (age <= 25) {
+            status = "student";
+        } else {
+            status = "adult";
+        }
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
+    public void setEgn(Integer egn) {
+        this.egn = egn;
+    }
+
     public void setEgn(int egn) {
         if (String.valueOf(egn).length() != 10) {
             throw new IllegalArgumentException("EGN should be exactly 10 digits long!");
@@ -29,6 +52,7 @@ public class Person2 {
             throw new IllegalArgumentException("Age cannot be negative!");
         }
         this.age = age;
+        setStatus();
     }
 
     public Person2(String name, String family) {
@@ -66,11 +90,9 @@ public class Person2 {
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(name== null ? "" : "name: " + name + System.lineSeparator());
-        sb.append(family== null ? "" : "Family name: " +  family + System.lineSeparator());
-        sb.append(age == null ? "" : "age:" + age + System.lineSeparator());
-        sb.append(egn == null ? "" : "EGN: " + egn);
-        return sb.toString();
+        return (name == null ? "" : "name: " + name + System.lineSeparator()) +
+                (family == null ? "" : "Family name: " + family + System.lineSeparator()) +
+                (age == null ? "" : "age:" + age + System.lineSeparator()) +
+                (egn == null ? "" : "EGN: " + egn);
     }
 }
