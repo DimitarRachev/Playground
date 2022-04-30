@@ -26,11 +26,11 @@ public class StackOfCards {
 
     boolean dealHand() {
         hand = new Card[12];
-        for (Card card : hand) {
+        for (int i = 0; i < hand.length; i++) {
             if (currentPack1 < pack1.length) {
-                card = pack1[currentPack1++];
+                hand[i] = pack1[currentPack1++];
             } else if (currentPack2 < pack2.length) {
-                card = pack2[currentPack2++];
+                hand[i] = pack2[currentPack2++];
             } else {
                 return false;
             }
