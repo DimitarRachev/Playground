@@ -1,7 +1,7 @@
 package exam;
 
 public class Card {
-    public static String[] faces = {"ACE", "KING", "QUEEN", "JACK", "TEN", "NINE", "EIGHT", "SEVEN"};
+    public static String[] faces = {"ACE", "TEN", "KING", "QUEEN", "JACK", "NINE", "EIGHT", "SEVEN"};
     public static String[] suits = {"CLUBS", "DIAMONDS", "HEARTS", "SPADES"};
     private int face;
     private int suit;
