@@ -7,14 +7,14 @@ public class Person2 {
     public Person2(String name, String family, int age, int egn) {
         this(name);
         this.family = family;
-        this.age = age;
-        this.egn = egn;
+        setAge(age);
+        setEgn(egn);
     }
 
     public Person2(String name, String family, int age) {
         this(name);
         this.family = family;
-        this.age = age;
+        setAge(age);
     }
 
     public void setEgn(int egn) {
