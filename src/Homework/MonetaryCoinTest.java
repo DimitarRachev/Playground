@@ -12,7 +12,7 @@ public class MonetaryCoinTest {
         System.out.println(computeSum(coins));
         MonetaryCoin coin = coins.get(1);
         System.out.println(coin.getFace());
-        coin.flip();;
+        coin.flip();
         System.out.println(coin.getFace());
     }
 
