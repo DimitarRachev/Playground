@@ -4,15 +4,15 @@ import java.util.Random;
 
 public class Coin {
     private Random rand;
-   private Face face;
+    private Face face;
 
     public Coin(Face face) {
         this.face = face;
         rand = new Random();
     }
 
-   public void flip() {
-        if (face == Face.HEAD) {
+    public void flip() {
+        if (rand.nextInt(2) == 1) {
             face = Face.TAIL;
         } else {
             face = Face.HEAD;
