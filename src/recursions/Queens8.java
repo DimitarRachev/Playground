@@ -1,5 +1,8 @@
 package recursions;
 
+import java.time.Duration;
+import java.time.LocalTime;
+
 public class Queens8 {
     public static char[][] board = populateBoard();
 
@@ -14,9 +17,9 @@ public class Queens8 {
     }
 
     public static void main(String[] args) {
-
+        LocalTime time = LocalTime.now();
         placeQueen(0);
-
+        System.out.println("Time elapsed: " + Duration.between(time, LocalTime.now()).toMillis() + "ms.");
     }
 
     private static void placeQueen(int row) {
