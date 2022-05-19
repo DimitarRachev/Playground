@@ -9,12 +9,6 @@ public class Main {
             stack.push(1L);
             stack.push(1L);
         System.out.println(fib(n - 1));
-        StringBuilder text = new StringBuilder();
-        text.append("123456789");
-        int countToDelete = n;
-        text.setLength(text.length() - countToDelete);
-        System.out.println(text);
-//        text.setLength(text.length() - countToDelete); ще ни спести цикъла при изтриването
     }
 
     private static long fib(int n) {
