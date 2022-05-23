@@ -12,21 +12,26 @@ public class p08InfixtoPostfix {
 
 
         for (String c : input) {
-            if (isNotOperator(c)) {
+            Operators operator = Operators.getByName(c);
+
+            if (operator == null) {
                 outputQueue.offer(c);
             } else {
-                handleOperator(c);
+                handleOperator(operator);
             }
         }
-        emptyStackInTheQueue();
 
+        emptyStackInTheQueue();
+        printQueue();
+    }
+
+    private static void printQueue() {
         for (String c : outputQueue) {
             System.out.print(c + " ");
         }
     }
 
-    private static void handleOperator(String c) {
-        Operators operator = Operators.getByName(c);
+    private static void handleOperator(Operators operator) {
 
         switch (operator) {
             case OPEN_BRACKET:
@@ -48,17 +53,12 @@ public class p08InfixtoPostfix {
         }
     }
 
-    //transfer what is left in the stack
     private static void emptyStackInTheQueue() {
         while (!stack.isEmpty()) {
             outputQueue.offer(stack.pop().name);
         }
     }
 
-    private static boolean isNotOperator(String c) {
-        return !(c.equals("(") || c.equals(")") || c.equals("+") || c.equals("-") || c.equals("/") || c.equals("*") || c.equals("^"));
-
-    }
 
     private enum Operators {
 
@@ -74,7 +74,7 @@ public class p08InfixtoPostfix {
         public final int power;
         private static final Map<String, Operators> BY_NAME = new HashMap<>();
 
-         Operators(String name, int power) {
+        Operators(String name, int power) {
             this.name = name;
             this.power = power;
         }
