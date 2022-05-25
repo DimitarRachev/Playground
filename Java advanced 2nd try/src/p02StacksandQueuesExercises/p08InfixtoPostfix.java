@@ -10,7 +10,6 @@ public class p08InfixtoPostfix {
         Scanner scanner = new Scanner(System.in);
         String[] input = scanner.nextLine().split("\\s+");
 
-
         for (String c : input) {
             Operators operator = Operators.getByName(c);
 
