@@ -2,8 +2,10 @@ package recursions;
 
 import java.time.Duration;
 import java.time.LocalTime;
+import java.util.*;
 
 public class Queens8 {
+   static int opt = 1;
     public static char[][] board = populateBoard();
 
     private static char[][] populateBoard() {
@@ -13,8 +15,10 @@ public class Queens8 {
                 initial[i][j] = '-';
             }
         }
+
         return initial;
     }
+
 
     public static void main(String[] args) {
         LocalTime time = LocalTime.now();
@@ -48,7 +52,7 @@ public class Queens8 {
             }
             System.out.println();
         }
-        System.out.println();
+        System.out.println(opt++);
     }
 
     private static void putQueen(int row, int col) {
