@@ -14,7 +14,7 @@ public class Arr {
 //        1 3 5 7 9 67
 //        1 5 6 7 65 65 65 67 574
 
-        //first
+        //first solution
 
         for (int el : arr1) {
             if (isPresent(el, arr2, 0, arr2.length - 1)) {
@@ -24,19 +24,20 @@ public class Arr {
 
         System.out.println();
 
-        //second
-        int i1 = 0;
-        int i2 = 0;
+        //second solution
 
-        while (i1 < arr1.length && i2 < arr2.length) {
-            if (arr1[i1] == arr2[i2]) {
-                System.out.print(arr1[i1] + " ");
-                i1++;
-                i2++;
-            } else if (arr1[i1] < arr2[i2]) {
-                i1++;
+        int index1 = 0;
+        int index2 = 0;
+
+        while (index1 < arr1.length && index2 < arr2.length) {
+            if (arr1[index1] == arr2[index2]) {
+                System.out.print(arr1[index1] + " ");
+                index1++;
+                index2++;
+            } else if (arr1[index1] < arr2[index2]) {
+                index1++;
             } else {
-                i2++;
+                index2++;
             }
         }
     }
