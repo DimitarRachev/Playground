@@ -11,10 +11,32 @@ public class Arr {
         Arrays.sort(arr1);
         Arrays.sort(arr2);
 
-        for (int i = 0; i < arr1.length; i++) {
-            int el = arr1[i];
+//        1 3 5 7 9 67
+//        1 5 6 7 65 65 65 67 574
+
+        //first
+
+        for (int el : arr1) {
             if (isPresent(el, arr2, 0, arr2.length - 1)) {
-                System.out.println(el);
+                System.out.print(el + " ");
+            }
+        }
+
+        System.out.println();
+
+        //second
+        int i1 = 0;
+        int i2 = 0;
+
+        while (i1 < arr1.length && i2 < arr2.length) {
+            if (arr1[i1] == arr2[i2]) {
+                System.out.print(arr1[i1] + " ");
+                i1++;
+                i2++;
+            } else if (arr1[i1] < arr2[i2]) {
+                i1++;
+            } else {
+                i2++;
             }
         }
     }
