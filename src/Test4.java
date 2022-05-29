@@ -1,7 +1,7 @@
 import java.util.Arrays;
 import java.util.Scanner;
 
-//  Crossfire @Boev 80/100
+//  Crossfire @Boev 100/100
 
 public class Test4 {
     public static void main(String[] args) {
