@@ -1,32 +1,31 @@
-import java.lang.reflect.Array;
 
-public class MyHashMap<T> {
-    Node[] hashmap;
+public class MyHashMap<K, V> {
+    Node<K, V>[] hashmap;
 
     public MyHashMap() {
         hashmap = new Node[26];
     }
 
-    public boolean add(String key, T value) {
+    public boolean add(String key, V value) {
         int hash = generateHash(key);
         int index = hash - 97;
-        Node<T> node = new Node<>(key, value, hash);
+        Node<K, V> node = new Node<>(key, value, hash);
         return addToMap(node, index);
     }
 
-    private boolean addToMap(Node<T> node, int index) {
+    private boolean addToMap(Node< K, V> node, int index) {
         if (hashmap[index] == null) {
-            Node<T> pointer = new Node<>("", node.getValue(), 0);
+            Node<K, V> pointer = new Node<>("", node.getValue(), 0);
             hashmap[index] = pointer;
             pointer.setNext(node);
             node.setPrevious(pointer);
             return true;
         }
-        Node<T> current = hashmap[index];
+        Node<K, V> current = hashmap[index];
         while (current.getNext() != null)
             if (current.getKey().equals(node.getKey())) {
-                Node<T> previous = current.getPrevious();
-                Node<T> next = current.getNext();
+                Node<K, V> previous = current.getPrevious();
+                Node<K, V> next = current.getNext();
                 node.setPrevious(previous);
                 node.setNext(next);
                 previous.setNext(node);
@@ -35,8 +34,8 @@ public class MyHashMap<T> {
                 current = current.getNext();
             }
         if (current.getKey().equals(node.getKey())) {
-            Node<T> previous = current.getPrevious();
-            Node<T> next = current.getNext();
+            Node<K, V> previous = current.getPrevious();
+            Node<K, V> next = current.getNext();
             node.setPrevious(previous);
             node.setNext(next);
             previous.setNext(node);

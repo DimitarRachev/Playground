@@ -1,11 +1,11 @@
-public class Node<T> {
+public class Node<K, V> {
    private int hashValue;
     private  String key;
-    private T value;
-   private Node<T> next;
-   private Node<T> previous;
+    private V value;
+   private Node<K, V> next;
+   private Node<K, V> previous;
 
-    public Node(String kay, T value , int hashValue) {
+    public Node(String kay, V value , int hashValue) {
         this.key = kay;
         this.value = value;
         this.hashValue = hashValue;
@@ -19,23 +19,23 @@ public class Node<T> {
         return key;
     }
 
-    public Node<T> getPrevious() {
+    public Node<K, V> getPrevious() {
         return previous;
     }
 
-        public void setPrevious(Node<T> previous) {
+        public void setPrevious(Node<K, V> previous) {
         this.previous = previous;
     }
 
-    public Node<T> getNext() {
+    public Node<K, V> getNext() {
         return next;
     }
 
-    public void setNext(Node<T> next) {
+    public void setNext(Node<K, V> next) {
         this.next = next;
     }
 
-    public T getValue() {
+    public V getValue() {
         return value;
     }
 
