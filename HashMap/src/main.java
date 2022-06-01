@@ -1,7 +1,7 @@
 public class Main {
     public static void main(String[] args) {
 
-        MyHashMap<String> map = new MyHashMap();
+        MyHashMap<String, String> map = new MyHashMap();
         map.add("a1", "first");
         map.add("a2", "second");
         map.add("a2", "SecondReplaced");

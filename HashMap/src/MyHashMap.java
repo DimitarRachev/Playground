@@ -45,8 +45,8 @@ public class MyHashMap<K, V> {
         return true;
     }
 
-    T get(String key) {
-        int hash = generateHash(key);
+    T get(T key) {
+        int hash = generateHash( key);
         int index = hash - 97;
         Node<T> node = hashmap[index];
         while (node.getNext() == null) {
@@ -58,7 +58,8 @@ public class MyHashMap<K, V> {
         return null;
     }
 
-    private int generateHash(String string) {
+    private <T> int generateHash(T string1) {
+        String string = String.valueOf(string1);
         if (string.length() == 0) {
             return 0;
         }
