@@ -44,7 +44,6 @@ public class MyHashMap<T> {
         current.setNext(node);
         node.setPrevious(current);
         return true;
-
     }
 
     private int generateHash(String string) {
