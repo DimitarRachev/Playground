@@ -23,8 +23,7 @@ public class Main {
            temp = temp.next;
        }
         System.out.println(temp.number);
-
-    }
+     }
 
     private static Node reverse(Node node1) {
         Node temp = node1;
