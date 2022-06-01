@@ -5,7 +5,9 @@ public class Main {
         map.add("asd", "asdafa");
         map.add("asd", "asdafa2");
         map.add("asdasda", "asda");
+
         map.add("assd", "asdafa");
         System.out.println();
+
     }
 }
