@@ -46,6 +46,19 @@ public class MyHashMap<T> {
         return true;
     }
 
+    T get(String key) {
+        int hash = generateHash(key);
+        int index = hash - 97;
+        Node<T> node = hashmap[index];
+        while (node.getNext() == null) {
+            if (node.getKey().equals(key)) {
+                return node.getValue();
+            }
+            node = node.getNext();
+        }
+        return null;
+    }
+
     private int generateHash(String string) {
         if (string.length() == 0) {
             return 0;
