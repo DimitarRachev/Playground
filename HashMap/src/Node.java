@@ -1,11 +1,11 @@
-public class Node<K, V> {
+public class Node<K extends Comparable<K>, V> {
    private int hashValue;
-    private  String key;
+    private  K key;
     private V value;
-   private Node<K, V> next;
+   private Node<K , V> next;
    private Node<K, V> previous;
 
-    public Node(String kay, V value , int hashValue) {
+    public Node(K kay, V value , int hashValue) {
         this.key = kay;
         this.value = value;
         this.hashValue = hashValue;
@@ -15,8 +15,9 @@ public class Node<K, V> {
         return hashValue;
     }
 
-    public String getKey() {
+    public K getKey() {
         return key;
+
     }
 
     public Node<K, V> getPrevious() {
@@ -33,6 +34,10 @@ public class Node<K, V> {
 
     public void setNext(Node<K, V> next) {
         this.next = next;
+    }
+
+    public void setValue(V value) {
+        this.value = value;
     }
 
     public V getValue() {
