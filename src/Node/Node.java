@@ -1,4 +1,4 @@
-package aRealFinalExam.Node;
+package Node;
 
 public class Node {
     int number;

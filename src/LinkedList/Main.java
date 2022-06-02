@@ -6,7 +6,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc  = new Scanner(System.in);
         //Test new linkedList with ints
-        LinkeTList<Integer>ints = new LinkeTList<>();
+        LinkedList.LinkeTList<Integer> ints = new LinkedList.LinkeTList<>();
         ints.addFirst(10);
         ints.addLast(15);
         ints.addFirst(5);
@@ -18,7 +18,7 @@ public class Main {
         ints.deleteLast();
         System.out.println(ints);
             //Same test with Strings
-        LinkeTList<String>strs = new LinkeTList<>();
+        LinkedList.LinkeTList<String> strs = new LinkedList.LinkeTList<>();
         strs.addLast("15");
         strs.addFirst("10");
         strs.addLast("20");

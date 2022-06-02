@@ -1,8 +1,9 @@
 package LinkedList;
 
+
 public class LinkeTList<T> {
-    private Node<T> first;
-    private Node<T> last;
+    private LinkedList.Node<T> first;
+    private LinkedList.Node<T> last;
     private int size;
 
     public LinkeTList() {
@@ -12,7 +13,7 @@ public class LinkeTList<T> {
     }
 
     public void addFirst(T value) {
-        Node<T> newNode = new Node<>(value);
+        LinkedList.Node<T> newNode = new LinkedList.Node<>(value);
         if (first == null) {
             first = newNode;
             last = newNode;
@@ -24,7 +25,7 @@ public class LinkeTList<T> {
     }
 
     public void addLast(T value) {
-        Node<T> newNode = new Node<>(value);
+        LinkedList.Node<T> newNode = new LinkedList.Node<>(value);
         if (first == null) {
             first = newNode;
             last = newNode;
@@ -37,7 +38,7 @@ public class LinkeTList<T> {
 
     public void deleteFirst() {
         assureNotEmpty();
-        Node<T> temp = first;
+        LinkedList.Node<T> temp = first;
         first = first.getNext();
         temp.setNext(null);
         size--;
@@ -50,7 +51,7 @@ public class LinkeTList<T> {
             first = last = null;
             return;
         }
-        Node<T> current = first;
+        LinkedList.Node<T> current = first;
         for (int i = 0; i < size; i++) {
             if (current.getNext() == last) {
                 break;
@@ -67,7 +68,7 @@ public class LinkeTList<T> {
     public int indexOf(T value) {
         assureNotEmpty();
         int index = -1;
-        Node<T> current = first;
+        LinkedList.Node<T> current = first;
         for (int i = 0; i < size; i++) {
             if (current.getValue().equals(value)) {
                 index = i;
@@ -93,7 +94,7 @@ public class LinkeTList<T> {
     public String toString() {
         assureNotEmpty();
         StringBuilder out = new StringBuilder();
-        Node<T> current = first;
+        LinkedList.Node<T> current = first;
         while (current != null) {
             out.append(current.getValue()).append(System.lineSeparator());
             current = current.getNext();
