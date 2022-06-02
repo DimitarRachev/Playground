@@ -17,7 +17,6 @@ public class Node<K extends Comparable<K>, V> {
 
     public K getKey() {
         return key;
-
     }
 
     public Node<K, V> getPrevious() {
@@ -46,9 +45,5 @@ public class Node<K extends Comparable<K>, V> {
 
     public void setHashValue(int hashValue) {
         this.hashValue = hashValue;
-    }
-
-    public void nullifyPrevious() {
-        this.previous = null;
     }
 }
