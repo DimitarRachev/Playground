@@ -1,6 +1,6 @@
-import java.util.Objects;
 
 public class MyHashMap<K extends Comparable<K>, V> {
+    //TODO must implement resizing, if load factor becomes too great
     Node<K, V>[] hashmap;
 
     public MyHashMap() {
@@ -56,7 +56,7 @@ public class MyHashMap<K extends Comparable<K>, V> {
 
     public boolean remove(K key) {
         int index = generateHash(key) % hashmap.length;
-        Node node = hashmap[index];
+        Node<K, V> node = hashmap[index];
         if (node == null) {
             return false;
         }
@@ -73,8 +73,8 @@ public class MyHashMap<K extends Comparable<K>, V> {
         while (node.getNext() != null) {
             node = node.getNext();
             if (node.getKey().equals(key)) {
-                Node previous = node.getPrevious();
-                Node next = node.getNext();
+                Node<K, V> previous = node.getPrevious();
+                Node<K, V> next = node.getNext();
                 previous.setNext(next);
                 if (next != null) {
                     next.setPrevious(previous);
