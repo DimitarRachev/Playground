@@ -11,6 +11,7 @@ public class Main {
 
         printChain(node1);
         printChain(reverseNodeChain(node1));
+//some comment
     }
 
     private static void printChain(Node node) {
