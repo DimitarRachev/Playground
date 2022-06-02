@@ -23,7 +23,11 @@ public class Main {
             temp = temp.next;
         }
         System.out.println(temp.number);
+
+
     }
+
+
 
     private static Node.Node reverse(Node.Node node1) {
         Node.Node temp = node1;
