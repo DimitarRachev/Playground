@@ -46,10 +46,10 @@ public class MyHashMap<K extends Comparable<K>, V> {
             return node.getValue();
         }
         while (node.getNext() != null) {
+            node = node.getNext();
             if (node.getKey().equals(key)) {
                 return node.getValue();
             }
-            node = node.getNext();
         }
         return null;
     }
@@ -62,6 +62,10 @@ public class MyHashMap<K extends Comparable<K>, V> {
         }
         if (node.getKey().equals(key)) {
             Node<K, V> next = node.getNext();
+            if (next == null) {
+                hashmap[index] = null;
+                return true;
+            }
             next.setPrevious(null);
             hashmap[index] = next;
             return true;

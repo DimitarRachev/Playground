@@ -47,4 +47,8 @@ public class Node<K extends Comparable<K>, V> {
     public void setHashValue(int hashValue) {
         this.hashValue = hashValue;
     }
+
+    public void nullifyPrevious() {
+        this.previous = null;
+    }
 }
