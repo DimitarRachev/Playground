@@ -30,13 +30,17 @@ public class Test5 {
         for (int i = 0; i < 10; i++) {
             executor.submit(new Hello());
         }
-        executor.shutdown();
+        Thread thread = Thread.currentThread();
+        thread.interrupt();
+//      executor.shutdown();
+        executor.shutdownNow();
     }
 
     static class Hello implements Runnable {
 
         @Override
         public void run() {
+//            boolean interrupted = Thread.interrupted();
             String name = Thread.currentThread().getName();
             System.out.println("Thread name: " + name);
             System.out.println("Thread id: " + Thread.currentThread().getId());
