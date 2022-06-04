@@ -11,6 +11,8 @@ public class Problem3 {
         IntSupplier suplier = () -> {
           Random random = new Random();
           return random.nextInt(30);
+
+
         };
         List<Integer> list = IntStream.generate(suplier).limit(20).boxed().collect(Collectors.toList());
         list.forEach(i -> System.out.print(i + " "));
