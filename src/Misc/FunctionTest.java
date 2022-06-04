@@ -13,4 +13,5 @@ public class FunctionTest {
 
         Function<String, String> removeComma = s -> s.replace(",", "");
     }
+
 }
