@@ -13,8 +13,9 @@ public interface RandomCategorySupplier extends Supplier<List<Inventory>> {
         suppliers.clear();
         int n = RANDOM.nextInt(5) + 1;
         for (int i = 0; i < n; i++) {
-                suppliers.add(type + " Supplier №" + i);
+            suppliers.add(type + " Supplier №" + i);
         }
+        type.setReorderQty((RANDOM.nextInt(10) + 1) * n);
     }
 
     default List<Inventory> getRandomData(int HawMany, int a, int b) {
