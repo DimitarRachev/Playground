@@ -1,7 +1,9 @@
 package finalExam;
 
+import java.util.UUID;
+
 public class Inventory {
-    private String ID;
+    private String ID = String.valueOf(UUID.randomUUID());
     private int cnt;
    private Category category;
     private double price;
@@ -11,6 +13,7 @@ public class Inventory {
     public Inventory(Category category, double price) {
         this.category = category;
         this.price = price;
+        description = "Product-" + ID;
     }
 
     public Category getCategory() {
@@ -35,12 +38,9 @@ public class Inventory {
 
     @Override
     public String toString() {
-        return "Inventory{" +
-                "ID='" + ID + '\'' +
-                ", cnt=" + cnt +
-                ", category=" + category +
-                ", price=" + price +
-                ", description='" + description + '\'' +
-                '}';
+        return description + System.lineSeparator()
+                + "Category: " + category + System.lineSeparator()
+                +String.format("price: %2.f%n", price);
+
     }
 }
