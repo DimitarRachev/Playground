@@ -1,5 +1,6 @@
 package finalExam;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -20,6 +21,6 @@ public interface RandomCategorySupplier extends Supplier<List<Inventory>> {
 
     default List<Inventory> getRandomData(int HawMany, int a, int b) {
 
-        return null;
+        return new ArrayList<>();
     }
 }

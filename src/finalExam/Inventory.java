@@ -3,7 +3,7 @@ package finalExam;
 import java.util.UUID;
 
 public class Inventory {
-    private String ID = String.valueOf(UUID.randomUUID());
+    public String ID = String.valueOf(UUID.randomUUID());
     private int cnt;
    private Category category;
     private double price;
@@ -36,6 +36,10 @@ public class Inventory {
         return description;
     }
 
+    public String getID() {
+        return ID;
+    }
+
     @Override
     public String toString() {
         return description + System.lineSeparator()
@@ -43,4 +47,6 @@ public class Inventory {
                 +String.format("price: %2.f%n", price);
 
     }
+
+
 }
