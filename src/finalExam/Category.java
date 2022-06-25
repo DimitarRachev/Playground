@@ -3,33 +3,35 @@ package finalExam;
 import java.util.List;
 
 public enum Category {
-    A(reorderQty, suppliers),
-    B(reorderQty, suppliers),
-    C(reorderQty, suppliers),
-    D(reorderQty, suppliers);
-    static int reorderQty;
-  static List<String> suppliers;
+    A( reorderQty, suppliers),
+    B( reorderQty, suppliers),
+    C( reorderQty, suppliers),
+    D( reorderQty, suppliers);
 
-    Category(int reorderQty, List<String> suppliers) {
-        reorderQty = reorderQty;
-        suppliers = suppliers;
-    }
+    private  int reorderQty;
+   private List<String> suppliers;
 
-
-
-    public int getReorderQty() {
-        return reorderQty;
-    }
-
-    public void setReorderQty(int reorderQty) {
+  private  Category( int reorderQty, List<String> suppliers) {
         this.reorderQty = reorderQty;
+        this.suppliers = suppliers;
+    }
+
+
+    public void setSuppliers(List<String> suppliers) {
+        this.suppliers = suppliers;
     }
 
     public List<String> getSuppliers() {
         return suppliers;
     }
 
-    public void setSuppliers(List<String> suppliers) {
-        this.suppliers = suppliers;
+    public int getReorderQty() {
+        return reorderQty;
+    }
+
+
+
+    public void setReorderQty(int reorderQty) {
+        this.reorderQty = reorderQty;
     }
 }
