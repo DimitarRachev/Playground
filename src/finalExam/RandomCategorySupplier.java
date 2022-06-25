@@ -9,7 +9,12 @@ public interface RandomCategorySupplier extends Supplier<List<Inventory>> {
 
 
     private void updateType(Category type) {
-
+        List<String> suppliers = type.getSuppliers();
+        suppliers.clear();
+        int n = RANDOM.nextInt(5) + 1;
+        for (int i = 0; i < n; i++) {
+                suppliers.add(type + " Supplier №" + i);
+        }
     }
 
     default List<Inventory> getRandomData(int HawMany, int a, int b) {
